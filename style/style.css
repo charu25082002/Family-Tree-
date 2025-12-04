@@ -1,0 +1,538 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #FFFBF0 0%, #FFF9E6 100%);
+}
+
+.content-wrapper {
+    margin-top: 70px; /* Reduced to match scrolled navbar height */
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+    }
+    50% {
+        box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+    }
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        border-color: rgba(139, 69, 19, 0.2);
+    }
+    50% {
+        border-color: rgba(255, 215, 0, 0.4);
+    }
+}
+
+/* ===== FIXED NAVBAR STYLES - ALWAYS SCROLLED ===== */
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(255, 248, 225, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 5px 25px rgba(139, 69, 19, 0.15);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 2px solid #FFD700;
+    animation: slideDown 0.6s ease-out;
+    height: 70px; /* Always scrolled height */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Always scrolled height */
+    position: relative;
+}
+
+/* Logo Styles */
+.logo-container {
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    height: 45px; /* Smaller logo for scrolled state */
+    width: auto;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(2px 2px 4px rgba(139, 69, 19, 0.2));
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(-2deg);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+/* Main Navigation Styles */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px; /* Smaller padding for scrolled state */
+    text-decoration: none;
+    color: #8B4513;
+    font-weight: 600;
+    font-size: 15px; /* Slightly smaller font for scrolled state */
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 215, 0, 0.2), 
+        transparent);
+    transition: left 0.6s;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link:hover {
+    color: #8B4513;
+    transform: translateY(-3px);
+    border-bottom: 2px solid #FFD700;
+}
+
+/* Active state with bottom line */
+.nav-link.active {
+    color: #8B4513;
+    background: transparent;
+    box-shadow: none;
+    animation: none;
+    border: none;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background: #8B4513;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(139, 69, 19, 0.3);
+    animation: none;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px; /* Smaller padding for scrolled state */
+    background: transparent;
+    border: 1px solid transparent;
+    color: #8B4513;
+    font-size: 15px; /* Slightly smaller font for scrolled state */
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.dropbtn i.fa-chevron-down {
+    font-size: 12px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 4px;
+    color: #8B4513;
+}
+
+.dropdown:hover .dropbtn {
+    color: #8B4513;
+    transform: translateY(-3px);
+    border-bottom: 2px solid #FFD700;
+}
+
+.dropdown:hover .dropbtn i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(255, 248, 225, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    min-width: 220px;
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.15);
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    border: 1px solid rgba(139, 69, 19, 0.1);
+    overflow: hidden;
+}
+
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8B4513, #FFD700, #8B4513);
+    animation: shimmer 2s infinite linear;
+    background-size: 200% auto;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #8B4513;
+    border-bottom: 1px solid rgba(139, 69, 19, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: linear-gradient(to right, 
+        rgba(139, 69, 19, 0.1), 
+        rgba(139, 69, 19, 0.2));
+    transition: width 0.3s ease;
+}
+
+.dropdown-content a:hover::before {
+    width: 100%;
+}
+
+.dropdown-content a:hover {
+    color: #8B4513;
+    padding-left: 25px;
+    background: rgba(139, 69, 19, 0.05);
+}
+
+/* Book Now Button */
+.book-now-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px; /* Smaller padding for scrolled state */
+    background: linear-gradient(135deg, #8B4513 0%, #D4A76A 100%);
+    background-size: 200% auto;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    animation: glow 3s ease-in-out infinite;
+}
+
+.book-now-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.6s;
+}
+
+.book-now-btn:hover::before {
+    left: 100%;
+}
+
+.book-now-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(139, 69, 19, 0.4);
+    background-position: right center;
+}
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+}
+
+.mobile-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #8B4513, #FFD700);
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.mobile-toggle:hover .bar {
+    background: linear-gradient(90deg, #FFD700, #8B4513);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+    .main-nav {
+        gap: 5px;
+    }
+    
+    .nav-link, .dropbtn, .book-now-btn {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        margin-top: 70px;
+    }
+    
+    .fixed-navbar {
+        height: 70px;
+    }
+    
+    .nav-container {
+        height: 70px;
+    }
+    
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.98) 0%, 
+            rgba(255, 248, 225, 0.98) 100%);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 40px rgba(139, 69, 19, 0.15);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 10px;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        border-top: 2px solid #FFD700;
+    }
+    
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link, .dropbtn, .book-now-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropbtn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .dropdown-content {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        margin-top: 10px;
+        display: none;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.95) 0%, 
+            rgba(255, 248, 225, 0.95) 100%);
+        border: 1px solid rgba(139, 69, 19, 0.1);
+        border-radius: 8px;
+        animation: none;
+    }
+    
+    .dropdown-content::before {
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+        animation: slideDown 0.3s ease-out;
+    }
+    
+    .mobile-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+        background: linear-gradient(90deg, #FFD700, #8B4513);
+    }
+    
+    .mobile-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    
+    .mobile-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+        background: linear-gradient(90deg, #8B4513, #FFD700);
+    }
+    
+    .book-now-btn {
+        margin-top: 10px;
+        animation: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        height: 40px;
+    }
+    
+    .mobile-toggle {
+        width: 28px;
+        height: 20px;
+    }
+}
+
+/* ===== REMOVED SCROLL EFFECT (Navbar is always scrolled) ===== */
+/* You can remove the entire .fixed-navbar.scrolled section since we're always in scrolled state */
+
+/* ===== SMOOTH SCROLLING ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== CUSTOM SCROLLBAR FOR DROPDOWN ===== */
+@media (max-height: 600px) and (max-width: 768px) {
+    .main-nav {
+        max-height: 400px;
+    }
+    
+    .main-nav::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .main-nav::-webkit-scrollbar-track {
+        background: rgba(139, 69, 19, 0.05);
+        border-radius: 3px;
+    }
+    
+    .main-nav::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #8B4513, #FFD700);
+        border-radius: 3px;
+    }
+}

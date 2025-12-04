@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Family Tree Guest House</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+           
+                <header class="fixed-navbar">
+      <div class="nav-container">
+        <div class="logo-container">
+          <img
+            class="logo"
+            src="./images/fam copy.png"
+            alt="Family Tree Guest House Logo"
+          />
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link active">
+           Home
+          </a>
+          <a href="about.html" class="nav-link">
+            About Us
+          </a>
+          <div class="dropdown">
+            <button class="dropbtn">Rooms <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content">
+              <a href="rooms.html?room=Single"
+                ><i class="fas fa-user"></i> Single Room</a
+              >
+              <a href="rooms.html?room=Double"
+                ><i class="fas fa-user-friends"></i> Double Room</a
+              >
+              <a href="rooms.html?room=Triple"
+                ><i class="fas fa-users"></i> Triple Room</a
+              >
+            </div>
+          </div>
+          <a href="contact.html" class="nav-link">
+       Contact
+          </a>
+          <a href="rooms.html" class="book-now-btn">
+            <i class="fas fa-calendar-check"></i> Book Now
+          </a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <section class="about-hero">
+      <div class="hero-content">
+        <h1>About Family Tree Guest House</h1>
+        <p>Where Hospitality Meets Heritage</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number" data-count="20">0</span>
+            <span class="stat-label">Years of Excellence</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="5000">0</span>
+            <span class="stat-label">Happy Guests</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="15">0</span>
+            <span class="stat-label">Rooms</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="about-section story-section">
+      <div class="container">
+        <h2 class="section-title">Our Story</h2>
+        <div class="story-content">
+          <div class="story-text">
+            <p class="highlight">
+              Founded in 2005, Family Tree Guest House began as a small family
+              home with just 5 rooms, built on the principles of warmth,
+              comfort, and genuine hospitality.
+            </p>
+            <p>
+              What started as a passion project for the Johnson family has
+              blossomed into a beloved establishment known for its personal
+              touch and exceptional service. Over the years, we've expanded our
+              facilities while maintaining the intimate, family-friendly
+              atmosphere that our guests love.
+            </p>
+            <p>
+              Today, we continue to be family-owned and operated, with three
+              generations working together to create unforgettable experiences
+              for every guest who walks through our doors.
+            </p>
+          </div>
+          <div class="story-image">
+            <img
+              src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3"
+              alt="Our Guest House"
+            />
+            <div class="story-year">
+              <span>2005</span>
+              <p>Founded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="about-section mission-section">
+      <div class="container">
+        <h2 class="section-title">Our Mission & Vision</h2>
+        <div class="mission-cards">
+          <div class="mission-card">
+            <div class="mission-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To provide a home-like experience where every guest feels valued,
+              comfortable, and cared for, creating lasting memories of warmth
+              and hospitality.
+            </p>
+          </div>
+          <div class="mission-card">
+            <div class="mission-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To be the most recommended guest house in the region, known for
+              exceptional service, family values, and creating meaningful
+              connections with our guests.
+            </p>
+          </div>
+          <div class="mission-card">
+            <div class="mission-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Our Values</h3>
+            <p>
+              Family, Integrity, Excellence, Hospitality, and Sustainability
+              guide every decision we make and every service we provide.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flip Cards Section - Our Team -->
+    <section class="about-section team-section">
+      <div class="container">
+        <h2 class="section-title">Meet Our Family</h2>
+        <p class="section-subtitle">The people behind your comfort</p>
+
+        <div class="team-cards">
+          <!-- Flip Card 1 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3"
+                  alt="Robert Johnson"
+                />
+                <div class="team-info">
+                  <h3>Robert Johnson</h3>
+                  <p>Founder & Manager</p>
+                  <div class="team-social">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Robert Johnson</h3>
+                <p>
+                  With over 30 years in hospitality, Robert founded Family Tree
+                  Guest House to share his passion for genuine service and
+                  community.
+                </p>
+                <div class="team-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    "Every guest is family. That's not just our motto, it's our
+                    way of life."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Card 2 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3"
+                  alt="Sarah Johnson"
+                />
+                <div class="team-info">
+                  <h3>Sarah Johnson</h3>
+                  <p>Operations Director</p>
+                  <div class="team-social">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Sarah Johnson</h3>
+                <p>
+                  Sarah ensures every aspect of your stay is perfect. Her
+                  attention to detail and warm personality makes every guest
+                  feel special.
+                </p>
+                <div class="team-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    "The smile on a guest's face when they feel at home - that's
+                    my motivation."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Card 3 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3"
+                  alt="Michael Chen"
+                />
+                <div class="team-info">
+                  <h3>Michael Chen</h3>
+                  <p>Head of Hospitality</p>
+                  <div class="team-social">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Michael Chen</h3>
+                <p>
+                  With international experience in luxury hotels, Michael brings
+                  world-class standards to our family-run guest house.
+                </p>
+                <div class="team-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    "Great hospitality is about anticipating needs before
+                    they're expressed."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flip Cards Section - Our Values -->
+    <section class="about-section values-section">
+      <div class="container">
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-subtitle">What makes us different</p>
+
+        <div class="values-cards">
+          <!-- Value Card 1 -->
+          <div class="value-card">
+            <div class="value-card-inner">
+              <div class="value-card-front">
+                <div class="value-icon">
+                  <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Family First</h3>
+                <p>Click to learn more</p>
+              </div>
+              <div class="value-card-back">
+                <h3>Family First</h3>
+                <p>
+                  We treat every guest as an extension of our own family,
+                  ensuring personalized care and attention that makes you feel
+                  truly at home.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Value Card 2 -->
+          <div class="value-card">
+            <div class="value-card-inner">
+              <div class="value-card-front">
+                <div class="value-icon">
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Sustainability</h3>
+                <p>Click to learn more</p>
+              </div>
+              <div class="value-card-back">
+                <h3>Sustainability</h3>
+                <p>
+                  We're committed to eco-friendly practices, from energy
+                  conservation to local sourcing, ensuring we care for our
+                  community and planet.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Value Card 3 -->
+          <div class="value-card">
+            <div class="value-card-inner">
+              <div class="value-card-front">
+                <div class="value-icon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <h3>Excellence</h3>
+                <p>Click to learn more</p>
+              </div>
+              <div class="value-card-back">
+                <h3>Excellence</h3>
+                <p>
+                  We continually strive for excellence in service, facilities,
+                  and guest experience, never settling for "good enough."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Value Card 4 -->
+          <div class="value-card">
+            <div class="value-card-inner">
+              <div class="value-card-front">
+                <div class="value-icon">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Community</h3>
+                <p>Click to learn more</p>
+              </div>
+              <div class="value-card-back">
+                <h3>Community</h3>
+                <p>
+                  We actively support local businesses and community
+                  initiatives, believing that strong communities create better
+                  experiences for everyone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="about-section timeline-section">
+      <div class="container">
+        <h2 class="section-title">Our Journey</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2005</div>
+            <div class="timeline-content">
+              <h3>Grand Opening</h3>
+              <p>
+                Family Tree Guest House opens with 5 rooms, founded by Robert
+                and Maria Johnson.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2010</div>
+            <div class="timeline-content">
+              <h3>First Expansion</h3>
+              <p>
+                Added 5 more rooms and introduced our famous complimentary
+                breakfast service.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-content">
+              <h3>10 Year Anniversary</h3>
+              <p>
+                Celebrated a decade of service with over 10,000 guests from
+                around the world.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-content">
+              <h3>Sustainability Initiative</h3>
+              <p>
+                Implemented eco-friendly practices and received Green
+                Hospitality certification.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-content">
+              <h3>Latest Renovation</h3>
+              <p>
+                Complete renovation of all rooms with modern amenities while
+                preserving our traditional charm.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities Section with Animation -->
+    <!-- <section class="about-section amenities-section">
+      <div class="container">
+        <h2 class="section-title">Our Amenities</h2>
+        <p class="section-subtitle">Everything for your comfort</p>
+
+        <div class="amenities-grid">
+          <div class="amenity-item" data-animate="fadeInUp">
+            <div class="amenity-icon">
+              <i class="fas fa-wifi"></i>
+            </div>
+            <h3>Free High-Speed WiFi</h3>
+            <p>
+              Stay connected with complimentary high-speed internet throughout
+              the property.
+            </p>
+          </div>
+
+          <div class="amenity-item" data-animate="fadeInUp" data-delay="0.1s">
+            <div class="amenity-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Complimentary Breakfast</h3>
+            <p>
+              Start your day with our famous breakfast featuring local and
+              organic ingredients.
+            </p>
+          </div>
+
+          <div class="amenity-item" data-animate="fadeInUp" data-delay="0.2s">
+            <div class="amenity-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <h3>Secure Parking</h3>
+            <p>Free, secure parking for all guests with 24/7 surveillance.</p>
+          </div>
+
+          <div class="amenity-item" data-animate="fadeInUp" data-delay="0.3s">
+            <div class="amenity-icon">
+              <i class="fas fa-concierge-bell"></i>
+            </div>
+            <h3>24/7 Concierge</h3>
+            <p>
+              Our friendly staff is always available to assist with any needs or
+              recommendations.
+            </p>
+          </div>
+
+          <div class="amenity-item" data-animate="fadeInUp" data-delay="0.4s">
+            <div class="amenity-icon">
+              <i class="fas fa-snowflake"></i>
+            </div>
+            <h3>Air Conditioning</h3>
+            <p>
+              All rooms feature individual climate control for your comfort.
+            </p>
+          </div>
+
+          <div class="amenity-item" data-animate="fadeInUp" data-delay="0.5s">
+            <div class="amenity-icon">
+              <i class="fas fa-hot-tub"></i>
+            </div>
+            <h3>Relaxation Areas</h3>
+            <p>
+              Beautiful garden and lounge areas for relaxation and socializing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+     
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+      <div class="container">
+        <h2>Experience Our Hospitality</h2>
+        <p>Book your stay and become part of our family story</p>
+        <a href="rooms.html" class="btn-cta">Book Your Stay Now</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Family Tree Guest House</h3>
+          <p>
+            Your home away from home since 2005. Experience genuine hospitality
+            and comfort.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 Hospitality Lane,
+              Tourism City
+            </li>
+            <li><i class="fas fa-phone"></i> +1 (234) 567-8900</li>
+            <li>
+              <i class="fas fa-envelope"></i> info@familytreeguesthouse.com
+            </li>
+            <li><i class="fas fa-clock"></i> 24/7 Reception</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Family Tree Guest House. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-tripadvisor"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script/about.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>

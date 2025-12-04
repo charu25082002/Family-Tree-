@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Rooms - Family Tree Guest House</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/rooms.css" />
+  </head>
+  <body>
+    <header class="fixed-navbar">
+      <div class="nav-container">
+        <div class="logo-container">
+          <img
+            class="logo"
+            src="./images/fam copy.png"
+            alt="Family Tree Guest House Logo"
+          />
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">
+     Home
+          </a>
+          <a href="about.html" class="nav-link">
+        About Us
+          </a>
+          <div class="dropdown">
+            <button class="dropbtn"> Rooms <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content">
+              <a href="rooms.html?room=Single"
+                ><i class="fas fa-user"></i> Single Room</a
+              >
+              <a href="rooms.html?room=Double"
+                ><i class="fas fa-user-friends"></i> Double Room</a
+              >
+              <a href="rooms.html?room=Triple"
+                ><i class="fas fa-users"></i> Triple Room</a
+              >
+            </div>
+          </div>
+          <a href="contact.html" class="nav-link">
+           Contact
+          </a>
+          <a href="rooms.html" class="book-now-btn">
+            <i class="fas fa-calendar-check"></i> Book Now
+          </a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content with padding for fixed navbar -->
+    <main class="content-wrapper">
+      <!-- Hero Section -->
+      <section class="rooms-hero">
+        <div class="hero-overlay">
+          <h1 class="hero-title">Discover Your Perfect Stay</h1>
+          <p class="hero-subtitle">Luxurious comfort in every detail</p>
+          <div class="hero-bubbles">
+            <div
+              class="bubble"
+              style="--delay: 0s; --size: 60px; --left: 10%"
+            ></div>
+            <div
+              class="bubble"
+              style="--delay: 1s; --size: 40px; --left: 30%"
+            ></div>
+            <div
+              class="bubble"
+              style="--delay: 2s; --size: 80px; --left: 50%"
+            ></div>
+            <div
+              class="bubble"
+              style="--delay: 1.5s; --size: 50px; --left: 70%"
+            ></div>
+            <div
+              class="bubble"
+              style="--delay: 0.5s; --size: 70px; --left: 90%"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Room Filter Tabs -->
+      <section class="room-filter">
+        <div class="container">
+          <h2 class="section-title">Our Room Collection</h2>
+          <p class="section-subtitle">10 Unique Rooms to Choose From</p>
+
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All Rooms</button>
+            <button class="filter-tab" data-filter="single">Single Rooms</button>
+            <button class="filter-tab" data-filter="double">Double Rooms</button>
+            <button class="filter-tab" data-filter="triple">Triple Rooms</button>
+            <button class="filter-tab" data-filter="ac">AC Rooms</button>
+            <button class="filter-tab" data-filter="non-ac">Non-AC Rooms</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rooms Gallery - 10 Rooms -->
+      <section class="rooms-gallery">
+        <div class="container">
+          <div class="room-cards">
+            <!-- Room 1: Single AC -->
+            <div class="room-card-wrapper" data-category="single ac">
+              <div class="room-card">
+                <div class="room-badge">Most Popular</div>
+                <div class="room-image">
+                  <img src="./images/2025-01-08 (1).webp" alt="Single AC Room" />
+                </div>
+                <div class="room-name">Single AC Deluxe</div>
+              </div>
+            </div>
+
+            <!-- Room 2: Single Non-AC -->
+            <div class="room-card-wrapper" data-category="single non-ac">
+              <div class="room-card">
+                <div class="room-badge economy">Economy</div>
+                <div class="room-image">
+                  <img
+                    src="./images/2025-01-08 (12).webp"
+                    alt="Single Non-AC Room"
+                  />
+                </div>
+                <div class="room-name">Single Non-AC</div>
+              </div>
+            </div>
+
+            <!-- Room 3: Double AC -->
+            <div class="room-card-wrapper" data-category="double ac">
+              <div class="room-card">
+                <div class="room-badge featured">Couples Choice</div>
+                <div class="room-image">
+                  <img src="./images/2025-01-08 (3).webp" alt="Double AC Room" />
+                </div>
+                <div class="room-name">Double AC Luxury</div>
+              </div>
+            </div>
+
+            <!-- Room 4: Double Non-AC -->
+            <div class="room-card-wrapper" data-category="double non-ac">
+              <div class="room-card">
+                <div class="room-badge value">Best Value</div>
+                <div class="room-image">
+                  <img
+                    src="./images/2025-01-08 (11).webp"
+                    alt="Double Non-AC Room"
+                  />
+                </div>
+                <div class="room-name">Double Non-AC</div>
+              </div>
+            </div>
+
+            <!-- Room 5: Triple AC -->
+            <div class="room-card-wrapper" data-category="triple ac">
+              <div class="room-card">
+                <div class="room-badge new">Family Favorite</div>
+                <div class="room-image">
+                  <img src="./images/2025-01-08 (5).webp" alt="Triple AC Room" />
+                </div>
+                <div class="room-name">Triple AC Suite</div>
+              </div>
+            </div>
+
+            <!-- Room 6: Triple Non-AC -->
+            <div class="room-card-wrapper" data-category="triple non-ac">
+              <div class="room-card">
+                <div class="room-badge">Group Stay</div>
+                <div class="room-image">
+                  <img
+                    src="./images/2025-01-08 (6).webp"
+                    alt="Triple Non-AC Room"
+                  />
+                </div>
+                <div class="room-name">Triple Non-AC</div>
+              </div>
+            </div>
+
+            <!-- Room 7: Double Deluxe AC -->
+            <div class="room-card-wrapper" data-category="double ac">
+              <div class="room-card">
+                <div class="room-badge premium">Premium</div>
+                <div class="room-image">
+                  <img
+                    src="./images/2025-01-08 (7).webp"
+                    alt="Double Deluxe AC Room"
+                  />
+                </div>
+                <div class="room-name">Double Deluxe AC</div>
+              </div>
+            </div>
+
+            <!-- Room 8: Single Executive AC -->
+            <div class="room-card-wrapper" data-category="single ac">
+              <div class="room-card">
+                <div class="room-badge business">Business</div>
+                <div class="room-image">
+                  <img
+                    src="./images/2025-01-08 (8).webp"
+                    alt="Single Executive AC Room"
+                  />
+                </div>
+                <div class="room-name">Single Executive AC</div>
+              </div>
+            </div>
+
+            <!-- Room 9: Family Suite AC -->
+            <div class="room-card-wrapper" data-category="suite ac">
+              <div class="room-card">
+                <div class="room-badge premium">Luxury</div>
+                <div class="room-image">
+                  <img src="./images/2025-01-08 (9).webp" alt="Family Suite AC" />
+                </div>
+                <div class="room-name">Family Suite AC</div>
+              </div>
+            </div>
+
+            <!-- Room 10: Double Economy Non-AC -->
+            <div class="room-card-wrapper" data-category="double non-ac">
+              <div class="room-card">
+                <div class="room-badge budget">Budget</div>
+                <div class="room-image">
+                  <img
+                    src="./images/2025-01-08.webp"
+                    alt="Double Economy Non-AC"
+                  />
+                </div>
+                <div class="room-name">Double Economy Non-AC</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Form Section -->
+      <section class="booking-section">
+        <div class="container">
+          <div class="booking-container">
+            <div class="booking-info">
+              <h2 class="booking-title">Ready to Book Your Stay?</h2>
+              <p class="booking-subtitle">
+                Fill out the form below and we'll get back to you within 24 hours
+              </p>
+
+              <div class="booking-features">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div class="feature-text">
+                    <h4>Best Price Guarantee</h4>
+                    <p>Find a lower price elsewhere? We'll match it!</p>
+                  </div>
+                </div>
+
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="feature-text">
+                    <h4>Flexible Cancellation</h4>
+                    <p>Free cancellation up to 48 hours before check-in</p>
+                  </div>
+                </div>
+
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-concierge-bell"></i>
+                  </div>
+                  <div class="feature-text">
+                    <h4>24/7 Support</h4>
+                    <p>Our team is always available to assist you</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="booking-cta">
+                <h3>Need Help Choosing?</h3>
+                <p>Call our reservation team: <strong>9176808873</strong></p>
+                <p>Or WhatsApp: <strong>9176808873</strong></p>
+              </div>
+            </div>
+
+            <div class="booking-form-wrapper">
+              <div class="form-header">
+                <h3><i class="fas fa-calendar-check"></i> Booking Form</h3>
+                <p>Complete your reservation in 3 easy steps</p>
+              </div>
+
+              <form id="bookingForm" class="colorful-form">
+                <div class="form-step active" id="step1">
+                  <h4>Step 1: Select Room & Dates</h4>
+
+                  <div class="form-group">
+                    <label for="roomType"
+                      ><i class="fas fa-bed"></i> Room Type</label
+                    >
+                    <div class="select-wrapper">
+                      <select id="roomType" required>
+                        <option value="">Choose your room</option>
+                        <option value="Single AC Deluxe">Single AC Deluxe</option>
+                        <option value="Single Non-AC">Single Non-AC</option>
+                        <option value="Double AC Luxury">Double AC Luxury</option>
+                        <option value="Double Non-AC">Double Non-AC</option>
+                        <option value="Triple AC Suite">Triple AC Suite</option>
+                        <option value="Triple Non-AC">Triple Non-AC</option>
+                        <option value="Double Deluxe AC">Double Deluxe AC</option>
+                        <option value="Single Executive AC">
+                          Single Executive AC
+                        </option>
+                        <option value="Family Suite AC">Family Suite AC</option>
+                        <option value="Double Economy Non-AC">
+                          Double Economy Non-AC
+                        </option>
+                      </select>
+                      <i class="fas fa-chevron-down"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="checkin"
+                        ><i class="fas fa-sign-in-alt"></i> Check-in</label
+                      >
+                      <input type="date" id="checkin" required />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="checkout"
+                        ><i class="fas fa-sign-out-alt"></i> Check-out</label
+                      >
+                      <input type="date" id="checkout" required />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="guests"
+                      ><i class="fas fa-users"></i> Number of Guests</label
+                    >
+                    <div class="guest-selector">
+                      <button type="button" class="guest-btn minus">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <input
+                        type="number"
+                        id="guests"
+                        value="1"
+                        min="1"
+                        max="4"
+                        readonly
+                      />
+                      <button type="button" class="guest-btn plus">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <button type="button" class="next-step-btn" data-next="step2">
+                    Next Step <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+
+                <div class="form-step" id="step2">
+                  <h4>Step 2: Personal Information</h4>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="firstName"
+                        ><i class="fas fa-user"></i> First Name</label
+                      >
+                      <input type="text" id="firstName" required />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="lastName"
+                        ><i class="fas fa-user"></i> Last Name</label
+                      >
+                      <input type="text" id="lastName" required />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email"
+                      ><i class="fas fa-envelope"></i> Email Address</label
+                    >
+                    <input type="email" id="email" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone"
+                      ><i class="fas fa-phone"></i> Phone Number</label
+                    >
+                    <input type="tel" id="phone" required />
+                  </div>
+
+                  <div class="form-row">
+                    <button type="button" class="prev-step-btn" data-prev="step1">
+                      <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button type="button" class="next-step-btn" data-next="step3">
+                      Next Step <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-step" id="step3">
+                  <h4>Step 3: Special Requests & Confirmation</h4>
+
+                  <div class="form-group">
+                    <label for="specialRequests"
+                      ><i class="fas fa-star"></i> Special Requests</label
+                    >
+                    <textarea
+                      id="specialRequests"
+                      placeholder="Any special requests, dietary needs, or preferences..."
+                    ></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="newsletter" checked />
+                      <label for="newsletter"
+                        >Subscribe to our newsletter for special offers</label
+                      >
+                    </div>
+
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="terms" required />
+                      <label for="terms"
+                        >I agree to the terms and conditions</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="price-summary">
+                    <h4>Price Summary</h4>
+                    <div class="summary-row">
+                      <span>Room Charges (3 nights)</span>
+                      <span class="price">₹2400</span>
+                    </div>
+                    <div class="summary-row">
+                      <span>Taxes & Fees</span>
+                      <span class="price">₹240</span>
+                    </div>
+                    <div class="summary-row total">
+                      <span>Total Amount</span>
+                      <span class="price">₹2640</span>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <button type="button" class="prev-step-btn" data-prev="step2">
+                      <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button type="submit" class="submit-btn">
+                      <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="room-testimonials">
+        <div class="container">
+          <h2 class="section-title">What Our Guests Say</h2>
+          <p class="section-subtitle">Real experiences from our happy guests</p>
+
+          <div class="testimonial-slider">
+            <div class="testimonial-slide active">
+              <div class="testimonial-content">
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>
+                  "The Double AC Luxury room exceeded our expectations! The
+                  balcony view was breathtaking and the bed was incredibly
+                  comfortable."
+                </p>
+                <div class="guest-info">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                    alt="Guest"
+                  />
+                  <div>
+                    <h4>Jennifer Miller</h4>
+                    <span>Stayed in Double AC Luxury</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>
+                  "Perfect for our family vacation! The Triple AC Suite had plenty
+                  of space and the kids loved the city view from the windows."
+                </p>
+                <div class="guest-info">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                    alt="Guest"
+                  />
+                  <div>
+                    <h4>David Wilson</h4>
+                    <span>Stayed in Triple AC Suite</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-content">
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p>
+                  "As a solo traveler, the Single AC Deluxe was perfect. Cozy,
+                  clean, and had everything I needed. Will definitely return!"
+                </p>
+                <div class="guest-info">
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                    alt="Guest"
+                  />
+                  <div>
+                    <h4>Sarah Chen</h4>
+                    <span>Stayed in Single AC Deluxe</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider-controls">
+              <button class="slider-prev">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <button class="slider-next">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Family Tree Guest House</h3>
+            <p>
+              Your home away from home since 2005. Experience genuine
+              hospitality and comfort.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="rooms.html">Rooms</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 21, East Coast Rd, Kottamedu,
+                Sarukkupalam, Vanur, Tamil Nadu 605104
+              </li>
+              <li><i class="fas fa-phone"></i> +91 91768 08873</li>
+              <li>
+                <i class="fas fa-envelope"></i> info@familytreeguesthouse.com
+              </li>
+              <li><i class="fas fa-clock"></i> 24/7 Reception</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Family Tree Guest House. All rights reserved.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script/script.js"></script>
+    <script src="./script/rooms.js"></script>
+  </body>
+</html>
