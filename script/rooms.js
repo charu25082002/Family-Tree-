@@ -195,7 +195,7 @@ document.getElementById("bookingForm").addEventListener("submit", function (e) {
     `_This booking request was submitted via the Family Tree Guest House website_`;
 
   // WhatsApp phone number
-  const whatsappNumber = "9176808873";
+  const whatsappNumber = "9345112978";
 
   // Create WhatsApp URL
   const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
@@ -373,7 +373,7 @@ function retryWhatsApp() {
     `*📅 SUBMITTED ON*%0A` +
     `${new Date().toLocaleString("en-IN")}`;
 
-  const whatsappNumber = "9176808873";
+  const whatsappNumber = "9345112978";
   const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   window.open(whatsappURL, "_blank");

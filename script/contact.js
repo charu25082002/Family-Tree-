@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const encodedMessage = encodeURIComponent(whatsappMessage);
 
       // WhatsApp phone number (remove any spaces, dashes, etc.)
-      const whatsappNumber = "9176808873";
+      const whatsappNumber = "9345112978";
 
       // Create WhatsApp URL
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
           break;
 
         case "call":
-          window.location.href = "tel:9176808873";
+          window.location.href = "tel:9345112978";
           break;
 
         case "email":
