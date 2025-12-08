@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Family Tree Guest House - Modern Layout</title>
+    <title>Family Tree Guest House - Simple Homestay</title>
     <link rel="stylesheet" href="./style/style.css" />
-    <!-- <link rel="stylesheet" href="./style/index.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -19,207 +18,25 @@
         --primary-brown: #8B4513;
         --light-brown: #D4A76A;
         --cream-white: #FFFBF0;
+        --light-cream: #F8F4E8;
+        --medium-brown: #A0522D;
         --shadow-color: rgba(139, 69, 19, 0.2);
+        --pure-white: #FFFFFF;
       }
 
-      /* FIXED NAVBAR STYLES - Always visible at top */
-      .fixed-navbar {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        z-index: 1000 !important;
-        background: linear-gradient(135deg, rgba(255, 251, 240, 0.98) 0%, rgba(212, 167, 106, 0.98) 100%) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-        border-bottom: 2px solid var(--gold-yellow) !important;
-        box-shadow: 0 5px 30px rgba(139, 69, 19, 0.15) !important;
-        transition: all 0.3s ease !important;
-        transform: translateY(0) !important;
-        opacity: 1 !important;
-        visibility: visible !important;
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .fixed-navbar.scrolled {
-        background: linear-gradient(135deg, rgba(255, 251, 240, 0.98) 0%, rgba(212, 167, 106, 0.95) 100%) !important;
-        box-shadow: 0 10px 40px rgba(139, 69, 19, 0.2) !important;
-        padding: 10px 0 !important;
-      }
-
-      .fixed-navbar .nav-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 80px;
-      }
-
-      /* Logo in Navbar */
-      .logo-container {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo {
-        height: 60px;
-        width: auto;
-        transition: transform 0.3s ease;
-      }
-
-      .fixed-navbar.scrolled .logo {
-        height: 50px;
-      }
-
-      /* Main Navigation */
-      .main-nav {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-      }
-
-      .nav-link {
-        color: var(--primary-brown);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        padding: 10px 0;
-        position: relative;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .nav-link.active {
-        color: var(--orange-yellow);
-      }
-
-      .nav-link:hover {
-        color: var(--orange-yellow);
-        transform: translateY(-2px);
-      }
-
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background: linear-gradient(45deg, var(--gold-yellow), var(--orange-yellow));
-        transition: width 0.3s ease;
-        border-radius: 3px;
-      }
-
-      .nav-link:hover::after,
-      .nav-link.active::after {
-        width: 100%;
-      }
-
-      /* Dropdown Menu */
-      .dropdown {
-        position: relative;
-      }
-
-      .dropbtn {
-        background: none;
-        border: none;
-        color: var(--primary-brown);
-        font-weight: 600;
-        font-size: 1.1rem;
-        padding: 10px 0;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-      }
-
-      .dropbtn:hover {
-        color: var(--orange-yellow);
-        transform: translateY(-2px);
-      }
-
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: var(--cream-white);
-        min-width: 220px;
-        box-shadow: 0 10px 30px var(--shadow-color);
-        border-radius: 10px;
-        padding: 15px 0;
-        border: 1px solid var(--gold-yellow);
-        z-index: 1001;
-      }
-
-      .dropdown-content a {
-        color: var(--primary-brown);
-        padding: 12px 20px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: all 0.3s ease;
-        font-size: 1rem;
-      }
-
-      .dropdown-content a:hover {
-        background: linear-gradient(45deg, var(--gold-yellow), var(--orange-yellow));
-        color: var(--primary-brown);
-        transform: translateX(5px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
-        animation: fadeIn 0.3s ease;
-      }
-
-      /* Book Now Button */
-      .book-now-btn {
-        background: linear-gradient(45deg, var(--gold-yellow), var(--orange-yellow));
-        color: var(--primary-brown);
-        padding: 12px 25px !important;
-        border-radius: 25px;
-        font-weight: 700;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(255, 165, 0, 0.3);
-        border: 2px solid transparent;
-      }
-
-      .book-now-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 165, 0, 0.4);
-        border-color: var(--primary-brown);
-        background: var(--primary-brown);
-        color: var(--gold-yellow);
-      }
-
-      /* Mobile Menu Toggle */
-      .mobile-toggle {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        flex-direction: column;
-        gap: 5px;
-        z-index: 1002;
-      }
-
-      .mobile-toggle .bar {
-        width: 25px;
-        height: 3px;
-        background: var(--primary-brown);
-        border-radius: 2px;
-        transition: all 0.3s ease;
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+        background-color: var(--pure-white);
       }
 
       /* Content margin to account for fixed navbar */
@@ -235,9 +52,9 @@
         overflow-x: hidden;
       }
 
-      /* Modern Asymmetrical Hero Section */
+      /* Modern Asymmetrical Hero Section - WHITE BACKGROUND */
       .hero-section {
-        background: linear-gradient(135deg, var(--cream-white) 0%, var(--light-brown) 100%);
+        background-color: var(--pure-white);
         min-height: 90vh;
         position: relative;
         overflow: hidden;
@@ -363,7 +180,7 @@
         position: absolute;
         bottom: 30px;
         right: -20px;
-        background: linear-gradient(135deg, var(--primary-brown), #6B3410);
+        background: linear-gradient(135deg, var(--primary-brown), var(--medium-brown));
         color: var(--gold-yellow);
         padding: 15px 25px;
         border-radius: 15px;
@@ -375,12 +192,13 @@
         transform: rotate(-5deg);
       }
 
-      /* New Section Layout: Split Screen */
+      /* New Section Layout: Split Screen - LIGHT CREAM BACKGROUND */
       .split-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         min-height: 80vh;
         position: relative;
+        background: var(--light-cream);
       }
 
       .split-section.reverse {
@@ -392,11 +210,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        background: var(--light-cream);
       }
 
       .split-image {
         position: relative;
         overflow: hidden;
+        background: var(--light-cream);
       }
 
       .split-image img {
@@ -410,11 +230,11 @@
         transform: scale(1.1);
       }
 
-      /* Modern Floating Cards */
+      /* Modern Floating Cards - WHITE BACKGROUND */
       .floating-cards-container {
         position: relative;
         padding: 100px 40px;
-        background: linear-gradient(135deg, var(--primary-brown) 0%, #6B3410 100%);
+        background: var(--pure-white);
         overflow: hidden;
       }
 
@@ -428,16 +248,16 @@
       }
 
       .floating-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+        background: var(--pure-white);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 215, 0, 0.2);
+        border: 2px solid var(--gold-yellow);
         border-radius: 25px;
         padding: 50px 40px;
         text-align: center;
         position: relative;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 20px 60px var(--shadow-color);
         z-index: 1;
       }
 
@@ -455,8 +275,9 @@
 
       .floating-card:hover {
         transform: translateY(-30px) scale(1.05);
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-        border-color: var(--gold-yellow);
+        box-shadow: 0 40px 80px var(--shadow-color);
+        border-color: var(--orange-yellow);
+        background: linear-gradient(135deg, var(--pure-white), #FFF8E1);
       }
 
       .floating-icon {
@@ -478,89 +299,22 @@
       }
 
       .floating-title {
-        color: var(--gold-yellow);
+        color: var(--primary-brown);
         font-size: 1.8rem;
         margin-bottom: 20px;
         font-weight: 600;
       }
 
       .floating-text {
-        color: var(--cream-white);
+        color: var(--primary-brown);
         line-height: 1.8;
         font-size: 1.05rem;
         opacity: 0.9;
       }
 
-      /* Layered Stack Cards */
-      .stacked-cards-section {
-        padding: 120px 40px;
-        background: var(--cream-white);
-        position: relative;
-      }
-
-      .stacked-container {
-        max-width: 800px;
-        margin: 0 auto;
-        position: relative;
-      }
-
-      .stacked-card {
-        background: white;
-        border-radius: 20px;
-        padding: 60px 50px;
-        box-shadow: 0 30px 60px var(--shadow-color);
-        border: 2px solid var(--gold-yellow);
-        position: relative;
-        transition: all 0.3s ease;
-      }
-
-      .stacked-card:nth-child(1) {
-        transform: rotate(-2deg);
-        z-index: 3;
-        background: linear-gradient(135deg, white, #FFF8E1);
-      }
-
-      .stacked-card:nth-child(2) {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        right: 30px;
-        height: 100%;
-        background: linear-gradient(135deg, #FFF8E1, #FFECB3);
-        z-index: 2;
-        opacity: 0.8;
-        transform: rotate(1deg);
-      }
-
-      .stacked-card:nth-child(3) {
-        position: absolute;
-        top: 60px;
-        left: 60px;
-        right: 60px;
-        height: 100%;
-        background: linear-gradient(135deg, #FFECB3, var(--light-brown));
-        z-index: 1;
-        opacity: 0.6;
-        transform: rotate(-3deg);
-      }
-
-      .stacked-container:hover .stacked-card:nth-child(1) {
-        transform: rotate(0deg) translateY(-20px);
-      }
-
-      .stacked-container:hover .stacked-card:nth-child(2) {
-        transform: rotate(0deg);
-        opacity: 0.9;
-      }
-
-      .stacked-container:hover .stacked-card:nth-child(3) {
-        transform: rotate(0deg);
-        opacity: 0.7;
-      }
-
-      /* Diagonal Section */
+      /* Diagonal Section - BROWN GRADIENT CONTRAST */
       .diagonal-section {
-        background: linear-gradient(135deg, var(--primary-brown) 0%, #6B3410 100%);
+        background: linear-gradient(135deg, var(--primary-brown) 0%, var(--medium-brown) 100%);
         padding: 150px 40px;
         clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
         margin: -50px 0;
@@ -602,61 +356,10 @@
         border-color: var(--gold-yellow);
       }
 
-      /* Hexagonal Grid */
-      .hex-grid-section {
-        padding: 150px 40px;
-        background: var(--cream-white);
-      }
-
-      .hex-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .hex-item {
-        position: relative;
-        height: 200px;
-        background: linear-gradient(135deg, var(--light-brown), var(--gold-yellow));
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: var(--primary-brown);
-        transition: all 0.4s ease;
-        cursor: pointer;
-      }
-
-      .hex-item:nth-child(even) {
-        transform: translateY(50px);
-        background: linear-gradient(135deg, var(--gold-yellow), var(--orange-yellow));
-      }
-
-      .hex-item:hover {
-        transform: scale(1.1) rotate(10deg);
-        z-index: 2;
-        box-shadow: 0 20px 40px var(--shadow-color);
-      }
-
-      .hex-icon {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-      }
-
-      .hex-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        text-align: center;
-        padding: 0 20px;
-      }
-
-      /* Parallax Cards */
+      /* Parallax Section - DARK OVERLAY CONTRAST */
       .parallax-section {
         min-height: 80vh;
-        background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.9)),
+        background: linear-gradient(rgba(139, 69, 19, 0.85), rgba(139, 69, 19, 0.85)),
                     url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
         background-attachment: fixed;
         background-size: cover;
@@ -696,10 +399,10 @@
         transform: translateZ(30px);
       }
 
-      /* NEW SECTION: Guest Experiences Gallery */
+      /* NEW SECTION: Guest Experiences Gallery - LIGHT CREAM BACKGROUND */
       .gallery-section {
         padding: 120px 40px;
-        background: linear-gradient(135deg, var(--cream-white) 0%, #F5E6D3 100%);
+        background: var(--light-cream);
         position: relative;
       }
 
@@ -788,10 +491,10 @@
         opacity: 0.9;
       }
 
-      /* Interactive Cards */
+      /* Interactive Cards - BROWN GRADIENT CONTRAST */
       .interactive-section {
         padding: 120px 40px;
-        background: linear-gradient(135deg, var(--primary-brown) 0%, #6B3410 100%);
+        background: linear-gradient(135deg, var(--medium-brown) 0%, var(--primary-brown) 100%);
       }
 
       .interactive-grid {
@@ -812,6 +515,7 @@
         overflow: hidden;
         cursor: pointer;
         transition: all 0.4s ease;
+        border: 1px solid rgba(255, 215, 0, 0.2);
       }
 
       .interactive-card::before {
@@ -834,6 +538,7 @@
         transform: translateY(-20px);
         background: rgba(255, 255, 255, 0.2);
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        border-color: var(--gold-yellow);
       }
 
       .interactive-number {
@@ -850,9 +555,9 @@
         transform: scale(1.2);
       }
 
-      /* Footer Styles */
+      /* Footer Styles - BROWN GRADIENT CONTRAST */
       footer {
-        background: linear-gradient(135deg, var(--primary-brown) 0%, #6B3410 100%);
+        background: linear-gradient(135deg, var(--primary-brown) 0%, var(--medium-brown) 100%);
         color: white;
         padding: 60px 40px 30px;
         margin-top: 0;
@@ -1018,19 +723,6 @@
           height: 400px;
         }
         
-        .hex-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
-        }
-        
-        .hex-item:nth-child(even) {
-          transform: translateY(0);
-        }
-        
-        .hex-item {
-          height: 180px;
-        }
-        
         .gallery-grid {
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
@@ -1044,16 +736,6 @@
           padding: 40px 30px;
         }
 
-        /* Navbar Responsive */
-        .main-nav {
-          gap: 20px;
-        }
-        
-        .nav-link,
-        .dropbtn {
-          font-size: 1rem;
-        }
-
         .parallax-card {
           padding: 60px 40px;
           transform: none;
@@ -1061,10 +743,6 @@
 
         .parallax-title {
           font-size: 2.5rem;
-        }
-
-        .stacked-card {
-          padding: 50px 40px;
         }
 
         .interactive-grid {
@@ -1092,114 +770,6 @@
 
       /* Mobile View (480px - 767px) */
       @media (max-width: 767px) {
-        .fixed-navbar .nav-container {
-          padding: 0 15px;
-          height: 70px;
-        }
-
-        .logo {
-          height: 50px;
-        }
-
-        .fixed-navbar.scrolled .logo {
-          height: 40px;
-        }
-
-        /* Mobile Navigation */
-        .main-nav {
-          position: fixed;
-          top: 70px;
-          left: -100%;
-          width: 100%;
-          height: calc(100vh - 70px);
-          background: var(--cream-white);
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: flex-start;
-          padding: 30px 20px;
-          transition: left 0.3s ease;
-          z-index: 999;
-          overflow-y: auto;
-          gap: 0;
-        }
-
-        .main-nav.active {
-          left: 0;
-        }
-
-        .mobile-toggle {
-          display: flex;
-        }
-
-        .mobile-toggle.active .bar:nth-child(1) {
-          transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .mobile-toggle.active .bar:nth-child(2) {
-          opacity: 0;
-        }
-
-        .mobile-toggle.active .bar:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .nav-link {
-          width: 100%;
-          padding: 15px 0;
-          border-bottom: 1px solid rgba(139, 69, 19, 0.1);
-          font-size: 1.2rem;
-          justify-content: space-between;
-        }
-
-        .nav-link i {
-          font-size: 1.4rem;
-        }
-
-        .dropdown {
-          width: 100%;
-        }
-
-        .dropbtn {
-          width: 100%;
-          padding: 15px 0;
-          font-size: 1.2rem;
-          justify-content: space-between;
-          border-bottom: 1px solid rgba(139, 69, 19, 0.1);
-        }
-
-        .dropdown-content {
-          position: static;
-          display: none;
-          box-shadow: none;
-          background: transparent;
-          border: none;
-          padding: 10px 0 10px 20px;
-          width: 100%;
-          min-width: auto;
-        }
-
-        .dropdown-content a {
-          padding: 12px 0;
-          font-size: 1.1rem;
-          border-bottom: 1px solid rgba(139, 69, 19, 0.05);
-        }
-
-        .dropdown:hover .dropdown-content {
-          display: none;
-        }
-
-        .dropdown.active .dropdown-content {
-          display: block;
-        }
-
-        .book-now-btn {
-          width: 100%;
-          justify-content: center;
-          margin-top: 20px;
-          padding: 15px 25px !important;
-          font-size: 1.2rem;
-        }
-
         /* Content Adjustments */
         .content-wrapper {
           margin-top: 70px;
@@ -1306,25 +876,6 @@
           font-size: 1.5rem;
         }
 
-        /* Stacked Cards */
-        .stacked-cards-section {
-          padding: 80px 20px;
-        }
-
-        .stacked-container {
-          max-width: 100%;
-        }
-
-        .stacked-card {
-          padding: 40px 25px;
-          margin: 0 10px;
-        }
-
-        .stacked-card:nth-child(2),
-        .stacked-card:nth-child(3) {
-          display: none;
-        }
-
         /* Diagonal Section */
         .diagonal-section {
           padding: 80px 20px;
@@ -1344,30 +895,6 @@
 
         .diagonal-item {
           padding: 30px 20px;
-        }
-
-        /* Hex Grid */
-        .hex-grid-section {
-          padding: 80px 20px;
-        }
-
-        .hex-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
-        }
-
-        .hex-item {
-          height: 150px;
-        }
-
-        .hex-icon {
-          font-size: 2rem;
-          margin-bottom: 10px;
-        }
-
-        .hex-title {
-          font-size: 1rem;
-          padding: 0 15px;
         }
 
         /* Parallax Section */
@@ -1483,40 +1010,6 @@
 
       /* Small Mobile View (Below 480px) */
       @media (max-width: 480px) {
-        .fixed-navbar .nav-container {
-          padding: 0 10px;
-          height: 60px;
-        }
-
-        .logo {
-          height: 40px;
-        }
-
-        .mobile-toggle {
-          padding: 8px;
-        }
-
-        .mobile-toggle .bar {
-          width: 22px;
-          height: 2.5px;
-        }
-
-        .main-nav {
-          top: 60px;
-          height: calc(100vh - 60px);
-          padding: 20px 15px;
-        }
-
-        .nav-link {
-          font-size: 1.1rem;
-          padding: 12px 0;
-        }
-
-        .dropbtn {
-          font-size: 1.1rem;
-          padding: 12px 0;
-        }
-
         .content-wrapper {
           margin-top: 60px;
         }
@@ -1553,26 +1046,7 @@
           font-size: 1rem;
         }
 
-        .hex-grid {
-          grid-template-columns: 1fr;
-          max-width: 200px;
-          margin: 0 auto;
-        }
-
-        .hex-item {
-          height: 120px;
-        }
-
-        .hex-icon {
-          font-size: 1.8rem;
-        }
-
-        .hex-title {
-          font-size: 0.9rem;
-        }
-
         .floating-card,
-        .stacked-card,
         .interactive-card,
         .parallax-card {
           margin: 0;
@@ -1601,19 +1075,6 @@
 
       /* Landscape Mode for Mobile */
       @media (max-height: 500px) and (orientation: landscape) {
-        .main-nav {
-          top: 60px;
-          height: calc(100vh - 60px);
-          padding: 20px 15px;
-          overflow-y: auto;
-        }
-
-        .nav-link,
-        .dropbtn {
-          padding: 10px 0;
-          font-size: 1rem;
-        }
-
         .hero-section {
           min-height: 100vh;
         }
@@ -1666,14 +1127,14 @@
         <!-- Desktop Navigation -->
         <nav class="main-nav">
           <a href="index.html" class="nav-link active">
-          Home
+         Home
           </a>
           <a href="about.html" class="nav-link">
-      About Us
+       About Us
           </a>
           <div class="dropdown">
             <button class="dropbtn">
-       Rooms <i class="fas fa-chevron-down"></i>
+ Rooms <i class="fas fa-chevron-down"></i>
             </button>
             <div class="dropdown-content">
               <a href="rooms.html?room=Single">
@@ -1688,10 +1149,10 @@
             </div>
           </div>
           <a href="contact.html" class="nav-link">
-         Contact
+           Contact
           </a>
           <a href="rooms.html" class="book-now-btn">
-            <i class="fas fa-calendar-check"></i> Book Now
+        Book Now
           </a>
         </nav>
         
@@ -1711,12 +1172,12 @@
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
-              <span class="title-line">Experience Luxury</span>
+              <span class="title-line">Experience</span>
               <span class="title-highlight">Family Tree</span>
               <span class="title-line">Guest House</span>
             </h1>
             <p class="hero-subtitle">
-              Where modern design meets traditional hospitality in a unique asymmetrical layout
+              Where modern comfort meets traditional hospitality in a simple homestay setting
             </p>
             <div class="hero-buttons">
               <a href="rooms.html" class="cta-btn primary">
@@ -1730,8 +1191,8 @@
           <div class="hero-image">
             <div class="image-container">
               <img
-                src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3"
-                alt="Luxury Room"
+                src="./images/Photo Gallery of Family Tree Guest House in Kottakuppam - BestGuest House in Pondicherry - Justdial_files/family-tree-guest-house-kottakuppam-pondicherry-guest-house-uv89k8je92.jpg"
+                alt="Comfortable Room"
               />
               <div class="image-badge">
                 <span class="badge-text">⭐ 4.8/5 Rating</span>
@@ -1744,7 +1205,7 @@
 
       <!-- Split Screen Layout -->
       <section class="split-section">
-        <div class="split-content" style="background: var(--cream-white);">
+        <div class="split-content">
           <h2 style="color: var(--primary-brown); font-size: 2.8rem; margin-bottom: 30px;">
             Your Home Away From Home
           </h2>
@@ -1752,27 +1213,27 @@
             Nestled in the heart of Vanur, Tamil Nadu, Family Tree Guest House offers you a peaceful retreat from the hustle and bustle of city life. Established in 2005, we have been welcoming travelers from around the world.
           </p>
           <p style="color: var(--primary-brown); font-size: 1.1rem; line-height: 1.8;">
-            Our guest house is designed to provide you with comfort, privacy, and a genuine home-like experience. Each of our rooms is carefully maintained and equipped with modern amenities to ensure your stay is both comfortable and memorable.
+            Our simple homestay is designed to provide you with comfort, privacy, and a genuine home-like experience. Each of our rooms is carefully maintained and equipped with essential amenities to ensure your stay is both comfortable and memorable.
           </p>
         </div>
         <div class="split-image">
-          <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3" alt="Modern Interior">
+          <img src="./images/Photo Gallery of Family Tree Guest House in Kottakuppam - BestGuest House in Pondicherry - Justdial_files/family-tree-guest-house-kottakuppam-pondicherry-guest-house-9j8envv2hh.jpg" alt="Cozy Interior">
         </div>
       </section>
 
       <!-- Floating Cards Section -->
       <section class="floating-cards-container">
-        <h2 style="text-align: center; color: var(--gold-yellow); font-size: 3rem; margin-bottom: 60px;">
-          Our Premium Facilities
+        <h2 style="text-align: center; color: var(--primary-brown); font-size: 3rem; margin-bottom: 60px;">
+          Our Facilities
         </h2>
         <div class="floating-cards-grid">
           <div class="floating-card">
             <div class="floating-icon">
               <i class="fas fa-wifi"></i>
             </div>
-            <h3 class="floating-title">High-Speed WiFi</h3>
+            <h3 class="floating-title">Complimentary WiFi</h3>
             <p class="floating-text">
-              Stay connected with our complimentary high-speed internet available throughout the property.
+              Stay connected with our complimentary internet available throughout the property.
             </p>
           </div>
 
@@ -1795,25 +1256,6 @@
               All rooms are equipped with individual air conditioning units for your comfort.
             </p>
           </div>
-        </div>
-      </section>
-
-      <!-- Stacked Cards Section -->
-      <section class="stacked-cards-section">
-        <div class="stacked-container">
-          <div class="stacked-card">
-            <h2 style="color: var(--primary-brown); font-size: 2.5rem; margin-bottom: 30px; text-align: center;">
-              Dining & Food Options
-            </h2>
-            <p style="color: var(--primary-brown); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-              While we focus on providing excellent accommodation facilities, we do not provide food services. However, our prime location ensures that you have easy access to some of the best local restaurants and eateries in the area.
-            </p>
-            <p style="color: var(--primary-brown); font-size: 1.1rem; line-height: 1.8;">
-              Our staff will be happy to recommend dining options that suit your preferences and budget. We maintain excellent relationships with nearby eateries and can help you discover the best local dining experiences.
-            </p>
-          </div>
-          <div class="stacked-card"></div>
-          <div class="stacked-card"></div>
         </div>
       </section>
 
@@ -1841,64 +1283,19 @@
         </div>
       </section>
 
-      <!-- Hexagonal Grid -->
-      <section class="hex-grid-section">
-        <h2 style="text-align: center; color: var(--primary-brown); font-size: 3rem; margin-bottom: 80px;">
-          Unique Features
-        </h2>
-        <div class="hex-grid">
-          <div class="hex-item">
-            <div class="hex-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <div class="hex-title">24/7 Security</div>
-          </div>
-          <div class="hex-item">
-            <div class="hex-icon">
-              <i class="fas fa-concierge-bell"></i>
-            </div>
-            <div class="hex-title">Personal Service</div>
-          </div>
-          <div class="hex-item">
-            <div class="hex-icon">
-              <i class="fas fa-leaf"></i>
-            </div>
-            <div class="hex-title">Eco-Friendly</div>
-          </div>
-          <div class="hex-item">
-            <div class="hex-icon">
-              <i class="fas fa-map-signs"></i>
-            </div>
-            <div class="hex-title">Tour Guidance</div>
-          </div>
-          <div class="hex-item">
-            <div class="hex-icon">
-              <i class="fas fa-language"></i>
-            </div>
-            <div class="hex-title">Multi-Lingual Staff</div>
-          </div>
-          <div class="hex-item">
-            <div class="hex-icon">
-              <i class="fas fa-gift"></i>
-            </div>
-            <div class="hex-title">Welcome Package</div>
-          </div>
-        </div>
-      </section>
-
       <!-- Parallax Section -->
       <section class="parallax-section">
         <div class="parallax-card">
           <h2 class="parallax-title">Perfect Location</h2>
           <p class="parallax-text">
-            Situated in the heart of Vanur, our guest house offers easy access to all major attractions.
+            Situated in the heart of Vanur, our simple homestay offers easy access to all major attractions.
             Whether you're here for business or leisure, everything you need is just a short walk away.
             Experience the perfect blend of tranquility and convenience at Family Tree Guest House.
           </p>
         </div>
       </section>
 
-      <!-- NEW SECTION: Guest Experiences Gallery (Replacing Timeline) -->
+      <!-- NEW SECTION: Guest Experiences Gallery -->
       <section class="gallery-section">
         <div class="gallery-container">
           <div class="gallery-header">
@@ -1907,39 +1304,13 @@
               Discover the memorable moments created by our guests during their stay at Family Tree Guest House
             </p>
           </div>
-          
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cozy Room Experience">
-              <div class="gallery-overlay">
-                <div class="gallery-caption">Cozy Room Ambiance</div>
-                <div class="gallery-description">Guests enjoy our thoughtfully designed rooms with perfect lighting and comfort</div>
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Morning Breakfast">
-              <div class="gallery-overlay">
-                <div class="gallery-caption">Morning Serenity</div>
-                <div class="gallery-description">Peaceful mornings in our garden area with complimentary tea service</div>
-              </div>
-            </div>
-            
-            <div class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family Gathering">
-              <div class="gallery-overlay">
-                <div class="gallery-caption">Family Gatherings</div>
-                <div class="gallery-description">Perfect space for families to reconnect and create lasting memories</div>
-              </div>
-            </div>
-          </div>
-          
+         
           <div style="text-align: center; margin-top: 50px;">
             <h3 style="color: var(--primary-brown); font-size: 1.8rem; margin-bottom: 20px;">
               Create Your Own Memories
             </h3>
             <p style="color: var(--primary-brown); max-width: 800px; margin: 0 auto 30px; line-height: 1.7;">
-              Whether you're traveling solo, as a couple, or with family, Family Tree Guest House provides the perfect backdrop for your Vanur adventure. From our spacious rooms to our beautiful common areas, every corner is designed to help you relax and make the most of your stay.
+              Whether you're traveling solo, as a couple, or with family, Family Tree Guest House provides the perfect backdrop for your Vanur adventure. From our comfortable rooms to our beautiful common areas, every corner is designed to help you relax and make the most of your stay.
             </p>
             <a href="rooms.html" class="cta-btn primary" style="display: inline-flex;">
               <i class="fas fa-camera"></i> Book Your Experience
@@ -1961,8 +1332,8 @@
           </div>
           <div class="interactive-card">
             <div class="interactive-number">02</div>
-            <h3 style="color: var(--gold-yellow); margin-bottom: 15px;">Food Arrangements</h3>
-            <p>While we don't provide meals, our kitchenettes allow basic food preparation. Grocery stores nearby.</p>
+            <h3 style="color: var(--gold-yellow); margin-bottom: 15px;">Local Eateries</h3>
+            <p>We can recommend nearby restaurants and local dining options to suit all tastes and budgets.</p>
           </div>
           <div class="interactive-card">
             <div class="interactive-number">03</div>
@@ -1987,7 +1358,7 @@
           </div>
           <p class="footer-description">
             Your home away from home since 2005. Experience genuine hospitality
-            and comfort. Please note: We provide accommodation only - no food services.
+            and comfort in our simple homestay.
           </p>
         </div>
 
@@ -2033,7 +1404,6 @@
 
       <div class="footer-bottom">
         <p>© 2025 Family Tree Guest House. All rights reserved.</p>
-        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Note: Accommodation only - No food services provided</p>
       </div>
     </footer>
 
@@ -2139,18 +1509,6 @@
             
             card.addEventListener('mouseleave', function() {
               this.style.transform = 'translateY(0) scale(1)';
-            });
-          });
-
-          // Hex grid hover effect
-          const hexItems = document.querySelectorAll('.hex-item');
-          hexItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-              this.style.zIndex = '10';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-              this.style.zIndex = '1';
             });
           });
 
