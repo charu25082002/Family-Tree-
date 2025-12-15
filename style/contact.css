@@ -524,7 +524,9 @@
 
 /* Real Google Map Styles */
 .real-map-container {
-    width: 100%;
+    /* width: 100%; */
+    width: 100vw;
+        margin-left: calc(-50vw + 50%);
     height: 500px;
     border-radius: 20px;
     overflow: hidden;
