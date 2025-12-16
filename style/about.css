@@ -60,7 +60,7 @@
 
 /* About Hero Section */
 .about-hero {
-    background: 
+    background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(139, 69, 19, 0.9)),
         url("https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
     background-size: cover;
     background-position: center;

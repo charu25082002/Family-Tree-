@@ -1380,6 +1380,27 @@
           height: 250px;
         }
       }
+
+      .slideshow {
+  position: relative;
+  overflow: hidden;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  position: relative;
+}
+
     </style>
   </head>
   <body itemscope itemtype="https://schema.org/LodgingBusiness">
@@ -1443,7 +1464,7 @@
             <h1 class="hero-title">
               <span class="title-line">Family Tree Guest House</span>
               <span class="title-highlight">Budget Rooms in Pondicherry</span>
-              <span class="title-line">&amp; Auroville near Serenity Beach</span>
+              <span class="title-line">Near Serenity Beach &amp; Auroville</span>
             </h1>
             <p class="hero-subtitle">
               Affordable guest house in Pondicherry & Auroville offering comfortable budget rooms near Serenity Beach. Your perfect budget hotel in Vanur for family stays since 2020.
@@ -1487,7 +1508,7 @@
           </p>
         </div>
         <div class="split-image">
-          <img src="./images/2025-01-08 (8).webp" 
+          <img src="./images/unnamed.webp" 
                alt="Cozy interior of Family Tree Guest House - Best budget accommodation in Vanur near Pondicherry and Auroville"
                loading="lazy">
         </div>
@@ -1581,7 +1602,7 @@
       </section>
 
       <!-- Parallax Section -->
-      <section class="parallax-section">
+      <!-- <section class="parallax-section">
         <div class="parallax-row">
           <div class="parallax-card text-card">
             <h2 class="parallax-title">Our Second Location</h2>
@@ -1601,7 +1622,52 @@
                  loading="lazy">
           </div>
         </div>
-      </section>
+      </section> -->
+
+      <section class="parallax-section">
+  <div class="parallax-row">
+
+    <!-- Text Card -->
+    <!-- <div class="parallax-card text-card">
+      <h2 class="parallax-title">Our Second Location</h2>
+      <p class="parallax-text">
+        <strong>Family Tree Guest House</strong> is pleased to introduce our second location,
+        <strong>Family Tree Guest House 2</strong>, located at
+        <strong>XRQP+64V, Bommayapalayam, Puducherry, Tamil Nadu – 605101</strong>.
+        This location offers the same warm hospitality, peaceful ambiance,
+        and comfortable stay experience, with easy access to nearby beaches
+        and popular attractions. Guests can choose the location that best
+        suits their travel needs and enjoy a relaxing stay with us. Whether you're looking for
+        <strong>rooms in Pondicherry</strong> or
+        <strong>budget hotels in Auroville</strong>, we have you covered.
+      </p>
+    </div> -->
+
+   <div class="parallax-card text-card">
+  <h2 class="parallax-title"> In addition, we also have a  Private Villa</h2>
+  <!-- <p class="parallax-text">
+    In addition, we also have a <strong>Private Villa</strong>.
+    <br><br> -->
+    <strong>Family Tree Guest House Villa</strong> near Auroville, Pondicherry offers a peaceful retreat with cozy interiors, modern comforts, and complete privacy with an inner pool facility. Surrounded by greenery and close to the serene beaches, it is perfect for relaxing holidays, family stays, or quiet getaways. The villa blends comfort with the calm charm of Pondicherry.
+    <br><br>
+    <strong>Address:</strong> Family Tree Guest House 2, XRQP+64V, Bommayapalayam, Puducherry – 605101
+  </p>
+</div>
+
+
+
+    <!-- Slideshow Card -->
+    <div class="parallax-card image-card slideshow">
+      <img src="./images/second villa/5.jpeg" class="slide active" alt="Family Tree Guest House 2">
+      <img src="./images/second villa/1.jpeg" class="slide" alt="Guest House Room">
+      <img src="./images/second villa/2.jpeg" class="slide" alt="Guest House Exterior">
+      <img src="./images/second villa/3.jpeg" class="slide" alt="Guest House Exterior">
+      <img src="./images/second villa/4.jpeg" class="slide" alt="Guest House Exterior">
+    </div>
+
+  </div>
+</section>
+
 
       <!-- Guest Experiences Gallery -->
       <section class="gallery-section">
@@ -1765,6 +1831,16 @@
           }
         });
       });
+       
+      const slides = document.querySelectorAll('.slideshow .slide');
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 3500); // change image every 3.5 seconds
+
     </script>
   </body>
 </html>
